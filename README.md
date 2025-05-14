@@ -40,7 +40,7 @@ Get IntelliFlow AI running locally in just a few steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/[your-repo-url]
+   git clone https://github.com/ABDIRIZAK-30/IntelliFlow-AI/
    ```
 2. **Navigate to the Project Directory**:
    ```bash
