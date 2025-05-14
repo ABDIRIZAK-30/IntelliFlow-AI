@@ -4,13 +4,6 @@
   Empowering the future with intelligent, AI-driven workflows.
 </p>
 
-<p align="center">
-  <a href="https://intelli-flow-ai.vercel.app/"><img src="https://img.shields.io/badge/Live_Demo-Visit_Now-4CAF50?style=flat-square&logo=vercel" alt="Live Demo"></a>
-  <a href="https://github.com/[your-repo-url]"><img src="https://img.shields.io/github/stars/[your-username]/[your-repo]?style=flat-square&logo=github" alt="GitHub Stars"></a>
-  <a href="https://github.com/[your-repo-url]/blob/main/LICENSE"><img src="https://img.shields.io/github/license/[your-username]/[your-repo]?style=flat-square" alt="License"></a>
-  <a href="https://twitter.com/[your-twitter]"><img src="https://img.shields.io/twitter/follow/[your-twitter]?style=flat-square&logo=x" alt="Follow on X"></a>
-</p>
-
 ## 🚀 About IntelliFlow AI
 IntelliFlow AI is a cutting-edge web platform designed to streamline workflows through advanced artificial intelligence. Whether you're automating tasks, analyzing data, or enhancing productivity, IntelliFlow AI delivers a seamless and intuitive experience. Hosted on [Vercel](https://vercel.com), our application is built for performance, scalability, and modern design.
 
