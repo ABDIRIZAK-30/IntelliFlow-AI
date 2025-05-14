@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://via.placeholder.com/150x150.png?text=IntelliFlow+AI" alt="IntelliFlow AI Logo" width="150"/>
-</p>
-
 <h1 align="center">IntelliFlow AI</h1>
 
 <p align="center">
