@@ -24,7 +24,7 @@ IntelliFlow AI is a cutting-edge web platform designed to streamline workflows t
 
 
 ## Full-Page Screenshoot
-<img src="/assets/full-screenshot.jpg" widh="100%"; height="auto";>
+<img src="/assets/full-screenshot.jpg" width="100%" height="auto" />
 
 
 ## ✨ Key Features
