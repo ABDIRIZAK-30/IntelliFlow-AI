@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-300 dark:bg-[#030712]">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind Project</title>
+  <link rel="stylesheet" href="output.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    .text-gradient {
+      background: linear-gradient(90deg, #d850ed 0%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-transform: capitalize;
+    }
+
+    .box-container {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0
+      }
+
+      to {
+        width: 100%
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent
+      }
+    }
+
+    .animate-typing {
+      width: 30ch;
+      animation: typing 15s steps(28), blink 0.7s step-end infinite;
+      white-space: nowrap;
+      overflow: hidden;
+      /* border-right: 2px solid; */
+    }
+
+    .animate-sliding {
+      animation: slide 10s linear infinite;
+
+    }
+
+
+    @keyframes slide {
+      from {
+        transform: translateX(40%);
+      }
+
+      to {
+        transform: translateX(-40%);
+      }
+    }
+
+
+    .questionDiv {
+padding-block: 10rem;
+ margin: 0 auto;
+ max-width: 800px;
+
+}
+.questionDiv h1{
+  font-size: 4rem;
+  text-align: center;
+  padding-bottom: 0.6rem;
+}
+
+.darkmode.questionDiv h3{
+  color: white;
+}
+.questionDiv h3{
+  font-size: 1.4rem;
+  text-align: center;
+  color: #001db0;
+    padding-bottom: 1rem;
+  line-height: 2.5rem;
+}
+
+
+
+.darkmode .divQA .Q-title{
+  color: #ffffff;
+}
+
+ .Q-title{
+  color:white;
+  margin-bottom: 0.5rem;
+ }
+.divQA{
+  background-color: #0F0A2B;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 1rem;
+  border-radius: 0.4rem;
+  color: white;
+}
+.darkmode.divQA{
+  background-color: #d8d9dc;
+  color: #ffffff;
+}
+
+.Q-title{
+  font-size: 1rem;
+}
+
+  </style>
+</head>
+
+
+<body class="dark:bg-[#030712] dark:text-white bg-[#edf1f9] text-black min-h-screen transition-colors duration-300">
+
+  <!-- 🔵 Glow Backgrounds -->
+  <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+    <div
+      class="absolute top-[10%] left-[20%] w-[400px] h-[400px] bg-blue-500 opacity-30 blur-[120px] rounded-full animate-pulse">
+    </div>
+    <div
+      class="absolute top-[60%] left-[60%] w-[300px] h-[300px] bg-indigo-900 opacity-20 blur-[150px] rounded-full animate-float-slow">
+    </div>
+  </div>
+
+  <!-- 🔷 Main Wrapper -->
+  <div class="relative z-10">
+
+    <!-- 🔷 Header -->
+    <header
+      class="box-container lg:mt-5 py-3 px-6 md:bg-white shadow-md dark:shadow-none  lg:fixed lg:w-[1350px] lg:top-5 lg:left-6 lg:right-6 rounded-lg transition-colors duration-300  dark:bg-[#030712] z-30"
+      data-aos="fade-up" data-aos-delay="100">
+
+      <nav class="flex items-center justify-between lg:gap-4">
+        <h1 class="text-gradient font-bold text-2xl">IntelliFlow Ai</h1>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 ">
+          <a href="#pricing" class="text-[14px] font-semibold">Pricing</a>
+          <a href="#testmonial" class="text-[14px] font-semibold">Customers</a>
+          <a href="#blog" class="text-[14px] font-semibold">Blogs</a>
+          <a href="#supporting" class="text-[14px] font-semibold">Supporting</a>
+          <a href="#CTA" class="text-[14px] font-semibold">Contact</a>
+
+        </div>
+
+        <!-- Desktop Buttons -->
+        <div class="hidden md:flex items-center space-x-2">
+          <button
+            class="text-sm text-black border-1  border-[#b2b2b2] dark:bg-white dark:border-none py-1 px-3 rounded-sm transition-colors duration-300 cursor-pointer">
+            Login
+          </button>
+          <button
+            class="text-sm text-white py-1 px-4 bg-black rounded-sm  dark:bg-white dark:border-none dark:text-black  transition-colors duration-300 cursor-pointer">
+            Register
+          </button>
+          <button id="darkModeToggle" class="flex items-center px-4 py-2">
+            <img src="assets/lightmode.svg" alt="light"
+              class="block dark:hidden w-7 h-7 bg-[#dfdfdf] rounded-sm shadow-10">
+            <img src="assets/darkmode.svg" alt="dark" class="hidden dark:block w-7 h-7 bg-white rounded-sm shadow-2xl">
+          </button>
+        </div>
+
+        <!-- Mobile Menu Icon -->
+        <div class="md:hidden flex items-center space-x-2">
+          <button id="darkModeToggleMobile" class="w-10 h-10 flex items-center justify-center">
+            <img src="assets/lightmode.svg" alt="light" class="block dark:hidden w-7 h-7 bg-[#dfdfdf] rounded-sm">
+            <img src="assets/darkmode.svg" alt="dark" class="hidden dark:block w-7 h-7 bg-white rounded-sm">
+          </button>
+          <div id="menu-icon" class="w-10 h-10 flex items-center justify-center rounded-full cursor-pointer">
+            <span class="material-symbols-outlined">menu</span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+    <!-- 🔷 Mobile Menu -->
+    <div id="mobile-menu"
+      class="md:hidden hidden flex-col  space-y-17 bg-white dark:bg-black shadow-md rounded-lg py-6 px-6 transition-colors duration-300 animate-pulse">
+      <ul class="flex flex-col space-y-5">
+         <a href="#pricing" class="text-[14px] font-semibold">Pricing</a>
+          <a href="#testmonial" class="text-[14px] font-semibold">Customers</a>
+          <a href="#blog" class="text-[14px] font-semibold">Blogs</a>
+          <a href="#supporting" class="text-[14px] font-semibold">Supporting</a>
+          <a href="#CTA" class="text-[14px] font-semibold">Contact</a>
+
+      </ul>
+      <div class="flex items-center gap-5 mt-[-20px]">
+        <button
+          class="text-sm text-black border-1  border-[#b2b2b2] dark:bg-white dark:border-none py-2 px-3 w-1/2 rounded-sm transition-colors duration-300 cursor-pointer">
+          Login
+        </button>
+        <button
+          class="text-sm text-white py-2 px-4 bg-black rounded-sm  dark:bg-white dark:border-none dark:text-black  transition-colors duration-300 cursor-pointer w-1/2">
+          Register
+        </button>
+      </div>
+
+      <button class="text-sm text-white py-3 px-4 w-full rounded-full transition-colors duration-300"
+        style="background: linear-gradient(90deg, #ce38e5 0%, #1893c7 100%);">Get Started</button>
+    </div>
+
+    <!-- 🔷 Hero Section -->
+    <section class="box-container pt-15 lg:pt-40 px-4 flex flex-col items-center justify-center" data-aos="fade-left"
+      data-aos-delay="100">
+
+      <div class="flex flex-col space-y-4 items-center text-center ">
+        <div class="flex flex-wrap items-center gap-4 mb-4">
+          <img src="assets/ABDIRIZAK.jpg" alt="Abdirizak Moalim"
+            class="w-7 h-7 rounded-full shadow-lg dark:-blue-900 mr-[-17px]">
+          <img src="assets/MC-Hamuuda img.webp" alt="Abdirizak Moalim"
+            class="w-7 h-7 rounded-full shadow-lg dark:-blue-900 mr-[-17px]">
+          <img src="assets/MR-Sharafdiin img.webp" alt="Abdirizak Moalim"
+            class="w-7 h-7 rounded-full shadow-lg  dark:-blue-900 mr-[-17px]">
+          <img src="assets/Safiyo Mohamed.jpg" alt="Abdirizak Moalim"
+            class="w-7 h-7 rounded-full shadow-lg dark:-blue-900 mr-[-17px]">
+          <img src="assets/Haboon Abdi.jpg" alt="Abdirizak Moalim"
+            class="w-7 h-7 rounded-full shadow-lg dark:-blue-900 mr-[-17px]">
+          <img src="assets/Tasniim Abdi.jpg" alt="Abdirizak Moalim"
+            class="w-7 h-7 rounded-full shadow-lg dark:-blue-900 mr-[-17px]">
+
+        </div>
+        <h1 class="text-3xl lg:text-6xl  text-gradient font-semibold text-center leading-10 lg:leading-20 ">The website
+          builder you're<br>
+          looking for</h1>
+        <p>
+          Simple is a modern website builder powered by AI that changes how companies create user<br> interfaces
+          together.
+
+
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 mt-6">
+          <button class="bg-blue-800 text-white  px-15 py-4   rounded-sm md:px-10 hover:animate-pulse"
+            data-aos="fade-up" data-aos-delay="100">Start Free Trial
+            -></button>
+          <button class="bg-white text-black  px-15 py-4   rounded-sm md:px-10 hover:animate-pulse shadow-xl"
+            data-aos="fade-right" data-aos-delay="100">LearnMore</button>
+        </div>
+
+
+      </div>
+
+
+      <div
+        class="flex flex-col bg-[#040133] rounded-lg shadow-lg mt-20 mb-20 py-3 px-3  h-auto w-full mx-auto max-w-3xl"
+        data-aos="fade-down" data-aos-delay="100">
+
+        <div class="flex flex-col">
+          <div class="flex items-center gap-30 md:gap-65">
+            <div class="flex  items-center gap-2">
+              <span class="bg-green-500 rounded-full w-[15px] h-[15px]"></span>
+              <span class="bg-red-500 rounded-full w-[15px] h-[15px]"></span>
+              <span class="bg-yellow-500 rounded-full w-[15px] h-[15px]"></span>
+            </div>
+            <div class="flex items-center justify-end">
+              <h1 class=" text-white font-semibold text-center text-xl">IntelliFlow Ai</h1>
+            </div>
+
+          </div>
+
+          <div class="flex flex-col gap-1 mt-3 w-full">
+            <span class="material-symbols-outlined text-white">terminal</span>
+
+
+            <h1 class="text-white font-semibold w-full whitespace-nowrap overflow-hidden animate-typing"
+              data-aos="fade-up" data-aos-delay="100">
+
+              <h2 class="text-white  whitespace-nowrap overflow-hidden animate-typing"> <span class="text-green-500">$
+                  npx</span> intelliflow-cli@latest init</h2>
+              <h2 class="text-white  whitespace-nowrap overflow-hidden animate-typing"> <span
+                  class="text-green-500">Project Name:</span>saas-launchpad</h2>
+              <h2 class="text-white whitespace-nowrap overflow-hidden animate-typing"> <span
+                  class="text-green-500">Framework:</span> Next.js</h2>
+              <h2 class="text-white whitespace-nowrap overflow-hidden animate-typing"> <span
+                  class="text-green-500">TailwindCSS:</span>Included</h2>
+              <h2 class="text-white whitespace-nowrap overflow-hidden animate-typing"> <span class="text-green-500">Dark
+                  Mode: </span>Enabled</h2>
+
+              <h2 class="text-yellow-500 whitespace-nowrap overflow-hidden animate-typing">📦Installing dependencies...
+              </h2>
+              <h2 class="text-yellow-500 whitespace-nowrap overflow-hidden animate-typing">🔧Setting up project
+                structure...</h2>
+              <h2 class="text-yellow-500 whitespace-nowrap overflow-hidden animate-typing">✅Configuration complete.</h2>
+              <h2 class="text-red-300 mt-3 mb-1">✨ Project "saas-launchpad" created successfully!</h2>
+              <h1 class="text-white whitespace-nowrap overflow-hidden animate-typing">Next steps:</h1>
+              <h2 class="text-yellow-400 whitespace-nowrap overflow-hidden animate-typing">$ cd saas-launchpad</h2>
+              <h2 class="text-yellow-400 whitespace-nowrap overflow-hidden animate-typing"> $ npm install</h2>
+              <h2 class="text-yellow-400 whitespace-nowrap overflow-hidden animate-typing">$ npm run dev</h2>
+              <h2 class="text-green-400">✨ IntelliFlow is now running at http://localhost:3000 🚀</h2>
+              <h1 class="text-white text-2xl text-center mt-1 mb-1">Happy Coding</h1>
+
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+
+
+
+    <!-- trust costumers -->
+    <section
+      class="box-container flex flex-col items-center justify-center lg:mt-50 mb-50 overflow-hidden whitespace-nowrap"
+      data-aos="fade-up" data-aos-delay="100">
+      <h1 class="text-3xl lg:text-4xl text-gradient font-semibold text-center leading-20">Trusted by 1000+ companies
+      </h1>
+      <div class=" bg-black  rounded-lg my-20 dark:bg-transparent">
+        <div class="flex  md:flex items-center justify-center gap-4 py-5 animate-sliding">
+          <img src="assets/asset 2.svg" alt="Brand 1" class="w-32 h-auto">
+          <img src="assets/asset 3.svg" alt="Brand 2" class="w-32 h-auto">
+          <img src="assets/asset 4.svg" alt="Brand 3" class="w-32 h-auto">
+          <img src="assets/asset 5.svg" alt="Brand 4" class="w-32 h-auto">
+          <img src="assets/asset 6.svg" alt="Brand 5" class="w-32 h-auto">
+          <img src="assets/asset 7.svg" alt="Brand 5" class="w-32 h-auto">
+          <img src="assets/asset 8.svg" alt="Brand 5" class="w-32 h-auto">
+          <img src="assets/asset 9.svg" alt="Brand 5" class="w-32 h-auto">
+          <img src="assets/asset 10.svg" alt="Brand 5" class="w-32 h-auto">
+          <img src="assets/asset 2.svg" alt="Brand 1" class="w-32 h-auto">
+          <img src="assets/asset 3.svg" alt="Brand 2" class="w-32 h-auto">
+          <img src="assets/asset 4.svg" alt="Brand 3" class="w-32 h-auto">
+          <img src="assets/asset 5.svg" alt="Brand 4" class="w-32 h-auto">
+          <img src="assets/asset 6.svg" alt="Brand 5" class="w-32 h-auto">
+          <img src="assets/asset 7.svg" alt="Brand 5" class="w-32 h-auto">
+          <img src="assets/asset 8.svg" alt="Brand 5" class="w-32 h-auto">
+          <img src="assets/asset 9.svg" alt="Brand 5" class="w-32 h-auto">
+          <img src="assets/asset 10.svg" alt="Brand 5" class="w-32 h-auto">
+        </div>
+      </div>
+    </section>
+
+
+    <section class="box-container flex flex-col mb-0 items-center mt-50 relative whitespace-nowrap overflow-hidden "
+      data-aos="fade-down" data-aos-delay="100">
+      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden ">
+        <div
+          class="absolute top-[10%] left-[20%] w-[400px] h-[400px] bg-blue-500 opacity-30 blur-[120px] rounded-full animate-pulse">
+        </div>
+        <div
+          class="absolute top-[60%] left-[60%] w-[300px] h-[300px] bg-indigo-900 opacity-20 blur-[150px] rounded-full animate-float-slow">
+        </div>
+
+
+      </div>
+
+      <!-- new section -->
+
+
+      <div class="flex flex-col items-center justify-centr gap-4 mb-20 mt-30" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex items-center gap-4 flex-wrap justify-center px-4">
+          <div class="flex items-center gap-1 bg-amber-950 rounded-sm py-2 px-4 cursor-pointer" id="Startups">
+            <span class="material-symbols-outlined text-white ">radio_button_unchecked</span>
+            <h1 class="text-white">Startups</h1>
+          </div>
+          <div class="flex items-center gap-1 bg-amber-950 rounded-sm py-2 px-4 cursor-pointer" id="WebApps">
+            <span class="material-symbols-outlined text-white">schedule</span>
+
+            <h1 class="text-white">WebApps</h1>
+          </div>
+          <div class="flex items-center gap-1 bg-amber-950 rounded-sm py-2 px-4 cursor-pointer" id="Ecommerce">
+            <span class="material-symbols-outlined text-white ">devices_fold</span>
+            <h1 class="text-white">Ecommerce</h1>
+          </div>
+          <div class="flex items-center gap-1 bg-amber-950 rounded-sm py-2 px-4 cursor-pointer" id="Enterprice">
+            <span class="material-symbols-outlined text-white ">layers</span>
+            <h1 class="text-white">Enterprice</h1>
+          </div>
+        </div>
+      </div>
+
+      <!-- startups -->
+      <div id="Start" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="flex  gap-4 mb-80">
+          <div class="flex items-center gap-4 flex-wrap px-4">
+            <img src="assets/logo-05.svg" alt="logo-1" class="w-10  bg-white shadow-md rounded-full p-2 md:w-15">
+            <img src="assets/logo-02.svg" alt="logo-1"
+              class="mb-30 w-10 md:mb-40 bg-white shadow-md rounded-full p-2 md:w-15">
+            <img src="assets/logo-03.svg" alt="logo-1"
+              class="ml-0 mt-0 w-10 bg-white shadow-md rounded-full p-2 md:w-15 md:ml-[-77px] md:mt-40">
+            <img src="assets/logo-04.svg" alt="logo-1"
+              class="w-10 bg-white shadow-md rounded-full p-2 md:w-15 ml-15 mt-[-90px] sm:mt-0 sm:ml-0">
+
+
+
+          </div>
+          <div
+            class="flex items-center h-20 md:p-1 relative md:border-blue-500 mt-20 lg:h-22 lg:mt-15 flex-wrap   rounded-full">
+
+            <img src="assets/logo-01.svg" alt="logo-1" class="w-20  rounded-full animate-glow bg-black shadow-md p-2 ">
+          </div>
+          <div class="flex items-center gap-4 flex-wrap px-4 ">
+            <div class="flex items-center gap-4 flex-wrap px-4">
+              <img src="assets/logo-05.svg" alt="logo-1" class="w-10  bg-white shadow-md rounded-full p-2 md:w-15">
+              <img src="assets/logo-02.svg" alt="logo-1"
+                class="mb-30 w-10 md:mb-40 bg-white shadow-md rounded-full p-2 md:w-15">
+              <img src="assets/logo-03.svg" alt="logo-1"
+                class="ml-0 mt-0 w-10 bg-white shadow-md rounded-full p-2 md:w-15 md:ml-[-77px] md:mt-40">
+              <img src="assets/logo-04.svg" alt="logo-1"
+                class="w-10 bg-white shadow-md rounded-full p-2 md:w-15 ml-15 mt-[-90px] sm:mt-0 sm:ml-0">
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- WebApps -->
+      <div id="Enter" class="hidden" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="flex  gap-4 mb-80">
+          <div class="flex items-center gap-4 flex-wrap px-4">
+            <img src="assets/airbnb.svg" alt="logo-1" class="w-10  bg-white shadow-md rounded-full p-2 md:w-15">
+            <img src="assets/apple.svg" alt="logo-1"
+              class="mb-30 w-10 md:mb-40 bg-white shadow-md rounded-full p-2 md:w-15">
+            <img src="assets/aliexpress-icon.svg" alt="logo-1"
+              class="ml-[-45px] mt-30 w-10 bg-white shadow-md rounded-full p-2 md:w-15 md:ml-[-77px] md:mt-40">
+            <img src="assets/vitejs.svg" alt="logo-1" class="w-10 bg-white shadow-md rounded-full p-2 md:w-15">
+
+
+
+          </div>
+          <div
+            class="flex items-center h-20 p-1 relative border-blue-500 mt-20 lg:h-22 lg:mt-15 flex-wrap  border-1 rounded-full">
+
+            <img src="assets/logo-01.svg" alt="logo-1" class="w-20  rounded-full animate-glow bg-black shadow-md p-2 ">
+          </div>
+          <div class="flex items-center gap-4 flex-wrap px-4 ">
+            <div class="flex items-center gap-4 flex-wrap px-4">
+              <img src="assets/google-palm.svg" alt="logo-1" class="w-10  bg-white shadow-md rounded-full p-2 md:w-15">
+              <img src="assets/apidog.svg" alt="logo-1"
+                class="mb-30 w-10 md:mb-40 bg-white shadow-md rounded-full p-2 md:w-15">
+              <img src="assets/atom.svg" alt="logo-1"
+                class="ml-[-45px] mt-30 w-10 bg-white shadow-md rounded-full p-2 md:w-15 md:ml-[-77px] md:mt-40">
+              <img src="assets/authy.svg" alt="logo-1" class="w-10 bg-white shadow-md rounded-full p-2 md:w-15">
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- Ecommerce -->
+      <div id="Ecomm" class="hidden">
+
+        <div class="flex  gap-4 mb-80">
+          <div class="flex items-center gap-4 flex-wrap px-4">
+            <img src="assets/brave.svg" alt="logo-1" class="w-10  bg-white shadow-md rounded-full p-2 md:w-15">
+            <img src="assets/canva.svg" alt="logo-1"
+              class="mb-30 w-10 md:mb-40 bg-white shadow-md rounded-full p-2 md:w-15">
+            <img src="assets/firefox.svg" alt="logo-1"
+              class="ml-[-45px] mt-30 w-10 bg-white shadow-md rounded-full p-2 md:w-15 md:ml-[-77px] md:mt-40">
+            <img src="assets/gemini.svg" alt="logo-1" class="w-10 bg-white shadow-md rounded-full p-2 md:w-15">
+
+
+
+          </div>
+          <div
+            class="flex items-center h-20 p-1 relative border-blue-500 mt-20 lg:h-22 lg:mt-15 flex-wrap  border-1 rounded-full">
+
+            <img src="assets/logo-01.svg" alt="logo-1" class="w-20  rounded-full animate-glow bg-black shadow-md p-2 ">
+          </div>
+          <div class="flex items-center gap-4 flex-wrap px-4 ">
+            <div class="flex items-center gap-4 flex-wrap px-4">
+              <img src="assets/rowy.svg" alt="logo-1" class="w-10  bg-white shadow-md rounded-full p-2 md:w-15">
+              <img src="assets/shopify.svg" alt="logo-1"
+                class="mb-30 w-10 md:mb-40 bg-white shadow-md rounded-full p-2 md:w-15">
+              <img src="assets/svg_wordmark.svg" alt="logo-1"
+                class="ml-[-45px] mt-30 w-10 bg-white shadow-md rounded-full p-2 md:w-15 md:ml-[-77px] md:mt-40">
+              <img src="assets/logo-04.svg" alt="logo-1" class="w-10 bg-white shadow-md rounded-full p-2 md:w-15">
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Enterprice -->
+      <div id="Web" class="hidden">
+
+        <div class="flex  gap-4 mb-80">
+          <div class="flex items-center gap-4 flex-wrap px-4">
+            <img src="assets/java.svg" alt="logo-1" class="w-10  bg-white shadow-md rounded-full p-2 md:w-15">
+            <img src="assets/javascript.svg" alt="logo-1"
+              class="mb-30 w-10 md:mb-40 bg-white shadow-md rounded-full p-2 md:w-15">
+            <img src="assets/dart.svg" alt="logo-1"
+              class="ml-[-45px] mt-30 w-10 bg-white shadow-md rounded-full p-2 md:w-15 md:ml-[-77px] md:mt-40">
+            <img src="assets/netlify.svg" alt="logo-1" class="w-10 bg-white shadow-md rounded-full p-2 md:w-15">
+
+
+
+          </div>
+          <div
+            class="flex items-center h-20 p-1 relative border-blue-500 mt-20 lg:h-22 lg:mt-15 flex-wrap  border-1 rounded-full">
+
+            <img src="assets/logo-01.svg" alt="logo-1" class="w-20  rounded-full animate-glow bg-black shadow-md p-2 ">
+          </div>
+          <div class="flex items-center gap-4 flex-wrap px-4 ">
+            <div class="flex items-center gap-4 flex-wrap px-4">
+              <img src="assets/nhost.svg" alt="logo-1" class="w-10  bg-white shadow-md rounded-full p-2 md:w-15">
+              <img src="assets/python.svg" alt="logo-1"
+                class="mb-30 w-10 md:mb-40 bg-white shadow-md rounded-full p-2 md:w-15">
+              <img src="assets/sass.svg" alt="logo-1"
+                class="ml-[-45px] mt-30 w-10 bg-white shadow-md rounded-full p-2 md:w-15 md:ml-[-77px] md:mt-40">
+              <img src="assets/typescript.svg" alt="logo-1" class="w-10 bg-white shadow-md rounded-full p-2 md:w-15">
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="box-container flex flex-col items-center justify-center  mb-50 " data-aos="fade-up"
+      data-aos-delay="100">
+      <div class="flex flex-col items-center justify-center gap-4 mb-20 mt-[-120px]">
+        <img src="assets/Tasniim Abdi.jpg" alt="Tasniim Abdi"
+          class="w-20 h-20 rounded-full shadow-lg dark:-blue-900 mr-[-17px]">
+        <p class="text-center text-2xl font-semibold text-gray-700 dark:text-gray-300 lg:text-3xl md:hidden ">
+          “Simple has simplified my life in more ways<br> than one. From managing my sites to <br>keeping track of
+          tasks, it's become my go-to<bR> tool for everything.”
+        </p>
+
+        <p
+          class="hidden text-center text-2xl font-semibold text-gray-700 dark:text-gray-300 lg:text-3xl md:block md:leading-15 ">
+          “Simple has simplified my life in more ways than one. From managing<br> my sites to keeping track of tasks,
+          it's become my go-to<br> tool for everything.”
+        </p>
+        <h1>Tasniim Abdi / <span class="text-blue-500">CTO at Facebook</span></h1>
+      </div>
+    </section>
+
+
+    <section
+      class=" flex flex-col items-center justify-center mb-50 relative  bg-[#000d29] dark:bg-[#111827] mx-auto sm:box-container lg:w-full z-1 overflow-x-hidden"
+      data-aos="fade-up" data-aos-delay="100">
+      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+
+        <div
+          class="absolute top-[10%] left-[40%] w-[300px] h-[300px] bg-indigo-500 opacity-20 blur-[40px] rounded-full animate-float-slow">
+        </div>
+      </div>
+      <div class="flex flex-col items-center justify-center gap-4 mb-20 pt-10 ">
+        <h1 class="text-2xl lg:text-4xl text-gradient font-semibold text-center leading-15">Simple helps your teams work
+          more <br> efficiently together
+        </h1>
+        <div class="flex flex-col w-full h-full relative shadow-none "
+          style="background: url(assets/planet.png) center/cover no-repeat; width: 500px; height: 500px;">
+
+          <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+
+            <div
+              class="absolute top-[60%] left-[20%] bottom-0 w-[300px] h-[300px] bg-indigo-500 opacity-20 blur-[40px] rounded-full animate-float-slow">
+            </div>
+          </div>
+
+          <img src="assets/planet-tag-01.png" alt="planet tag"
+            class="absolute top-10 md:left-5 left-20 sm:w-60 w-60 h-15  shadow-lg dark:-blue-900 mr-20">
+          <img src="assets/planet-tag-02.png" alt="planet tag"
+            class="absolute top-40 sm:right-0 right-15 w-60 h-15 shadow-lg dark:-blue-900  animate-float-slow">
+
+          <img src="assets/planet-tag-03.png" alt="planet tag"
+            class="absolute bottom-0 sm:left-0 left-20 w-60 h-15  shadow-lg dark:-blue-900 mr-[-17px] animate-bounce">
+
+          <img src="assets/planet-tag-04.png" alt="planet tag"
+            class="absolute sm:bottom-20 bottom-40 sm:right-3 right-20 w-60 h-15  shadow-lg dark:-blue-900 mr-[-17px] animate-bounce">
+        </div>
+      </div>
+
+      <div class=" flex flex-col flex-wrap items-center justify-center gap-4 mb-20 mt-10">
+        <div class="flex items-center gap-4 flex-wrap  justify-center ">
+          <!-- card-1 -->
+          <div class="flex flex-col border-r-1   border-r-red-600  rounded-lg shadow-lg p-6 w-90 h-50 md:w-96 md:h-50">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="material-symbols-outlined text-blue-400">
+                padding
+              </span>
+              <h1 class="text-white font-semibold text-center text-xl">Instant Analytics</h1>
+            </div>
+            <p class="text-white ">Collect essential insights about how visitors are using your site with in-depth page
+              view metricslike pages, referring sites, and more.</p>
+
+
+          </div>
+          <div class="flex flex-col border-r-1   border-r-red-600  rounded-lg shadow-lg p-6 w-90 h-50 md:w-96 md:h-50">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="material-symbols-outlined text-blue-400">
+                download_done
+              </span>
+              <h1 class="text-white font-semibold text-center text-xl">Metadata</h1>
+            </div>
+            <p class="text-white ">Collect essential insights about how visitors are using your site with in-depth page
+              view metrics like pages, referring sites, and more.</p>
+
+
+
+          </div>
+          <div class="flex flex-col border-r-1   border-r-red-600  rounded-lg shadow-lg p-6 w-90 h-50 md:w-96 md:h-50">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="material-symbols-outlined text-blue-400">
+                web_traffic
+              </span>
+              <h1 class="text-white font-semibold text-center text-xl">SEO & Performance</h1>
+            </div>
+            <p class="text-white ">Collect essential insights about how visitors are using your site with in-depth page
+              view metrics like pages, referring sites, and more.</p>
+
+
+
+          </div>
+          <div class="flex flex-col border-r-1   border-r-red-600  rounded-lg shadow-lg p-6 w-90 h-50 md:w-96 md:h-50">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="material-symbols-outlined text-blue-400">
+
+                code_blocks
+
+              </span>
+              <h1 class="text-white font-semibold text-center text-xl">Custom Code</h1>
+            </div>
+            <p class="text-white ">Collect essential insights about how visitors are using your site with in-depth page
+              view metrics like pages, referring sites, and more.</p>
+
+
+            .
+          </div>
+          <div class="flex flex-col border-r-1   border-r-red-600  rounded-lg shadow-lg p-6 w-90 h-50 md:w-96 md:h-50">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="material-symbols-outlined text-blue-400">
+                adjust
+              </span>
+              <h1 class="text-white font-semibold text-center text-xl">Localization</h1>
+            </div>
+            <p class="text-white ">Collect essential insights about how visitors are using your site with in-depth page
+              view metrics like pages, referring sites, and more.</p>
+
+
+
+          </div>
+          <div class="flex flex-col border-r-1   border-r-red-600  rounded-lg shadow-lg p-6 w-90 h-50 md:w-96 md:h-50">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="material-symbols-outlined text-blue-400">
+                settings_power
+              </span>
+              <h1 class="text-white font-semibold text-center text-xl">Canonical URL</h1>
+            </div>
+            <p class="text-white ">Collect essential insights about how visitors are using your site with in-depth page
+              view metrics like pages, referring sites, and more.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <section class="box-container flex  items-center justify-center mb-5 mx-auto relative ">
+      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden " data-aos="fade-up" data-aos-delay="100">
+        <div
+          class="absolute top-[10%] left-[40%] w-[500px] h-[400px] bg-blue-500 opacity-30 blur-[60px] rounded-full animate-pulse">
+        </div>
+
+      </div>
+      <div class="flex flex-col justify-center items-center gap-4 mb-20 ">
+
+
+        <h1 class="text-2xl lg:text-5xl font-bold mb-5">Identify value much faster</h1>
+        <p class="text-center text-sm md:text-2xl text-[#989fa9] mb-5">Use powerful yet familiar tools to create your
+          ultimate website design. <br>Import your files everywhere, including Figma.</p>
+
+        <div
+          class="flex flex-col md:flex-row gap-4 mt-6 bg-[#000d29] dark:bg-[#111827] rounded-lg shadow-lg p-4 w-96 h-70 md:w-130 md:h-70 rotate-4 hover:rotate-0 transition-transform duration-300"
+          data-aos="fade-up" data-aos-delay="300">
+
+          <div class="flex flex-col items-start gap-2 mb-4">
+            <div class="flex items-center md:justify-self-start gap-30 md:gap-35">
+              <div class="flex  items-center gap-2">
+                <span class="bg-green-500 rounded-full w-[15px] h-[15px]"></span>
+                <span class="bg-red-500 rounded-full w-[15px] h-[15px]"></span>
+                <span class="bg-yellow-500 rounded-full w-[15px] h-[15px]"></span>
+              </div>
+              <div class="flex items-center justify-end">
+                <h1 class=" text-white font-semibold text-center text-xl">IntelliFlow Ai</h1>
+              </div>
+            </div>
+
+            <div class="flex flex-col   gap-3 mb-4 mt-5  transition-all duration-300">
+              <img src="assets/ABDIRIZAK.jpg" alt="abdirizak"
+                class="w-10 h-10 rounded-full shadow-lg dark:-blue-900 mr-[-17px] ml-8">
+              <h1 class="py-2 px-2  ml-8  bg-[#001b56] text-white rounded-1">ABDIRIZAK . Can we change the avatar?</h1>
+
+              <div class="flex items-center justify-center gap-2 mb-4">
+                <img src="assets/Tasniim Abdi.jpg" alt="tasniim"
+                  class="w-10 h-10 rounded-full shadow-lg dark:-blue-900 ">
+                <img src="assets/MC-Hamuuda img.webp" alt="mc-hamuuda"
+                  class="w-10 h-10 rounded-full shadow-lg dark:-blue-900 ">
+                <img src="assets/MR-Sharafdiin img.webp" alt="mr-sharafdiin"
+                  class="w-10 h-10 rounded-full shadow-lg dark:-blue-900 ">
+              </div>
+              <div class="flex flex-col  justify-center gap-2 md:ml-25 md:p-1 ml-14 mb-4 bg-white rounded-1 p-1 ">
+                <h1 class="text-[#989fa9] text-sm rounded-1"><span class="font-bold">MC-Hamuuda </span> . Sure, I can
+                  help with that.</h1>
+
+                <div class="flex gap-2">
+
+                  <div class="flex items-center justify-between gap-40">
+                    <div class="flex items-end mt-7 ">
+                      <span class="material-symbols-outlined text-[#001b56]">
+                        add
+                      </span>
+                      <span class="material-symbols-outlined text-[#001b56]">
+                        settings
+                      </span>
+                      <span class="material-symbols-outlined text-[#001b56]">
+                        menu_open
+                      </span>
+                    </div>
+                    <div class="flex items-end mt-7">
+                      <span
+                        class="material-symbols-outlined text-white bg-blue-500 rounded-full w-8 h-8 flex items-center justify-center">
+                        arrow_forward
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hidden  hover:flex-col flex-col gap-1.5 mt-3 w-full ">
+
+              <h1 class="text-white">npm login</h1>
+              <p class="text-[#989fa9]">--registry=https://npm.pkg.github.com
+                --scope=@phanatic Successfully logged-in.</p>
+
+              <h1 class="text-white">npm publish</h1>
+              <P class="text-[#989fa9]"> Package published.
+                Overlay 01
+              </P>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </section>
+
+
+    <section class="box-container" data-aos="fade-up" data-aos-delay="100">
+      <div class="flex items-center gap-4 flex-wrap  justify-center mt-30 ">
+        <!-- card-1 -->
+        <div class="flex flex-col border-r-1   border-r-blue-600  rounded-lg shadow-lg p-6 w-90 h-50 md:w-96 md:h-50">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="material-symbols-outlined text-blue-400">
+              padding
+            </span>
+            <h1 class="text-black font-semibold text-center text-xl dark:text-white ">Instant Analytics</h1>
+          </div>
+          <p class="text-black dark:text-white ">Collect essential insights about how visitors are using your site with
+            in-depth page view metricslike pages, referring sites, and more.</p>
+
+
+        </div>
+        <div class="flex flex-col border-r-1   border-r-blue-600  rounded-lg shadow-lg p-6 w-90 h-50 md:w-96 md:h-50">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="material-symbols-outlined text-blue-400">
+              download_done
+            </span>
+            <h1 class="text-black font-semibold text-center text-xl dark:text-white">Metadata</h1>
+          </div>
+          <p class="text-black dark:text-white">Collect essential insights about how visitors are using your site with
+            in-depth page view metrics like pages, referring sites, and more.</p>
+
+
+
+        </div>
+        <div class="flex flex-col border-r-1   border-r-blue-600  rounded-lg shadow-lg p-6 w-90 h-50 md:w-96 md:h-50">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="material-symbols-outlined text-blue-400">
+              web_traffic
+            </span>
+            <h1 class="text-black font-semibold text-center text-xl dark:text-white">SEO & Performance</h1>
+          </div>
+          <p class="text-black  dark:text-white ">Collect essential insights about how visitors are using your site with
+            in-depth page view metrics like pages, referring sites, and more.</p>
+
+
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="box-container py-16 px-4 sm:px-6 lg:px-8 lg:pt-40" id="testmonial" data-aos="fade-up"
+      data-aos-delay="300">
+      <h1 class="text-3xl md:text-5xl text-gradient font-semibold text-center leading-tight lg:pb-20 "
+        data-aos="fade-up">
+        Top startups love Simple
+      </h1>
+
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+        <!-- Testimonial Card -->
+        <div
+          class="flex flex-col rounded-xl shadow-lg p-6 bg-white dark:bg-[#0f172a] hover:scale-[1.02] hover:shadow-xl transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center gap-4 mb-4">
+            <img src="assets/ABDIRIZAK.jpg" alt="abdirizak" class="w-12 h-12 rounded-full">
+            <div>
+              <h2 class="font-bold text-lg">ABDIRIZAK MOALIM</h2>
+              <p class="text-sm text-gray-600 dark:text-gray-400">@abdirizak32</p>
+            </div>
+          </div>
+          <p class="text-base text-gray-800 dark:text-gray-300 mb-6">
+            I've tried several website builders before, but none were as user-friendly and versatile as this one. From
+            design to functionality, it exceeded my expectations!
+          </p>
+          <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+            <img src="assets/asset 56.svg" alt="twitter" class="w-6 h-6">
+            <span>Jan 15, 2027</span>
+          </div>
+        </div>
+
+        <!-- Repeat the testimonial with increased AOS delay for staggered animation -->
+        <div
+          class="flex flex-col rounded-xl shadow-lg p-6 bg-white dark:bg-[#0f172a] hover:scale-[1.02] hover:shadow-xl transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center gap-4 mb-4">
+            <img src="assets/MC-Hamuuda img.webp" alt="abdirizak" class="w-12 h-12 rounded-full">
+            <div>
+              <h2 class="font-bold text-lg">Mc-Hamuuda</h2>
+              <p class="text-sm text-gray-600 dark:text-gray-400">@mc-hamuuda16</p>
+            </div>
+          </div>
+          <p class="text-base text-gray-800 dark:text-gray-300 mb-6">
+            I've tried several website builders before, but none were as user-friendly and versatile as this one. From
+            design to functionality, it exceeded my expectations!
+          </p>
+          <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+            <img src="assets/asset 56.svg" alt="twitter" class="w-6 h-6">
+            <span>Jan 15, 2027</span>
+          </div>
+        </div>
+
+        <!-- Third card -->
+        <div
+          class="flex flex-col rounded-xl shadow-lg p-6 bg-white dark:bg-[#0f172a] hover:scale-[1.02] hover:shadow-xl transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-center gap-4 mb-4">
+            <img src="assets/MR-Sharafdiin img.webp" alt="mr-sharafdin13" class="w-12 h-12 rounded-full">
+            <div>
+              <h2 class="font-bold text-lg">Mr-Sharafdiin</h2>
+              <p class="text-sm text-gray-600 dark:text-gray-400">@mr-sharafdiin-12</p>
+            </div>
+          </div>
+          <p class="text-base text-gray-800 dark:text-gray-300 mb-6">
+
+            I've tried several website builders before, but none were as user-friendly and versatile as this one. From
+            design to functionality, it exceeded my expectations!
+          </p>
+          <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+            <img src="assets/asset 56.svg" alt="twitter" class="w-6 h-6">
+            <span>Jan 15, 2027</span>
+          </div>
+        </div>
+        <!-- Testimonial Card -->
+        <div
+          class="flex flex-col rounded-xl shadow-lg p-6 bg-white dark:bg-[#0f172a] hover:scale-[1.02] hover:shadow-xl transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center gap-4 mb-4">
+            <img src="assets/Safiyo Mohamed.jpg" alt="safiyo" class="w-12 h-12 rounded-full">
+            <div>
+              <h2 class="font-bold text-lg">Safiyo Mohamed</h2>
+              <p class="text-sm text-gray-600 dark:text-gray-400">@safiyo-32</p>
+            </div>
+          </div>
+          <p class="text-base text-gray-800 dark:text-gray-300 mb-6">
+            I've tried several website builders before, but none were as user-friendly and versatile as this one. From
+            design to functionality, it exceeded my expectations!
+          </p>
+          <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+            <img src="assets/asset 56.svg" alt="twitter" class="w-6 h-6">
+            <span>Jan 15, 2027</span>
+          </div>
+        </div>
+
+        <!-- Repeat the testimonial with increased AOS delay for staggered animation -->
+        <div
+          class="flex flex-col rounded-xl shadow-lg p-6 bg-white dark:bg-[#0f172a] hover:scale-[1.02] hover:shadow-xl transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center gap-4 mb-4">
+            <img src="assets/Tasniim Abdi.jpg" alt="tasniim" class="w-12 h-12 rounded-full">
+            <div>
+              <h2 class="font-bold text-lg">Tasniim Abdi</h2>
+              <p class="text-sm text-gray-600 dark:text-gray-400">@Tasniim-23</p>
+            </div>
+          </div>
+          <p class="text-base text-gray-800 dark:text-gray-300 mb-6">
+            I've tried several website builders before, but none were as user-friendly and versatile as this one. From
+            design to functionality, it exceeded my expectations!
+          </p>
+          <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+            <img src="assets/asset 56.svg" alt="twitter" class="w-6 h-6">
+            <span>Jan 15, 2027</span>
+          </div>
+        </div>
+
+        <!-- Third card -->
+        <div
+          class="flex flex-col rounded-xl shadow-lg p-6 bg-white dark:bg-[#0f172a] hover:scale-[1.02] hover:shadow-xl transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-center gap-4 mb-4">
+            <img src="assets/Haboon Abdi.jpg" alt="haboon" class="w-12 h-12 rounded-full">
+            <div>
+              <h2 class="font-bold text-lg">Haboon Abdi</h2>
+              <p class="text-sm text-gray-600 dark:text-gray-400">@haboon-323</p>
+            </div>
+          </div>
+          <p class="text-base text-gray-800 dark:text-gray-300 mb-6">
+            I've tried several website builders before, but none were as user-friendly and versatile as this one. From
+            design to functionality, it exceeded my expectations!
+          </p>
+          <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+            <img src="assets/asset 56.svg" alt="twitter" class="w-6 h-6">
+            <span>Jan 15, 2027</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
+    <section class=" py-16 pt-30 box-container " id="pricing" data-aos="fade-up" data-aos-delay="300">
+      <!-- 🔵 Glow Backgrounds -->
+      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-[10%] left-[20%] w-[400px] h-[300px] bg-blue-500 opacity-10 blur-[220px] rounded-full">
+        </div>
+
+      </div>
+      <div class="max-w-7xl mx-auto text-center mb-12">
+
+
+        <h1 class="text-3xl md:text-6xl mb-6 text-gradient font-semibold text-center leading-tight  "
+          data-aos="fade-up">
+          Plans that match your needs
+        </h1>
+        <p class="text-gray-600 dark:text-gray-300 text-xl sm:text-2xl">Flexible pricing for startups and growing
+          businesses
+        </p>
+      </div>
+
+
+
+
+
+      <div
+        class="grid grid-cols-1 px-15 sm:p-10 md:p-5 lg:p-0  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8  mx-auto">
+
+        <!-- Card 1 -->
+        <div
+          class="flex flex-col justify-between bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-6 text-gray-800 dark:text-white">
+          <div>
+            <h3 class="text-xl font-semibold">Starter</h3>
+            <p class="text-4xl font-bold mt-2">$9 <span class="text-base font-medium">/mo</span></p>
+            <p class="text-gray-500 mt-2 dark:text-gray-400">Great for personal projects and testing ideas.
+            </p>
+            <ul class="mt-6 space-y-2 text-sm">
+              <li>✔️ 1 Project</li>
+              <li>✔️ 100MB Storage</li>
+              <li>✔️ Email Support</li>
+              <li>✔️ 1,000 visitors/month</li>
+              <li>❌ No Analytics</li>
+            </ul>
+          </div>
+          <button class="mt-6 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md">Get
+            Started</button>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="flex flex-col justify-between bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-6 text-gray-800 dark:text-white">
+          <div>
+            <h3 class="text-xl font-semibold">Pro</h3>
+            <p class="text-4xl font-bold mt-2">$29 <span class="text-base font-medium">/mo</span></p>
+            <p class="text-gray-500 mt-2 dark:text-gray-400">Perfect for freelancers and small teams.</p>
+            <ul class="mt-6 space-y-2 text-sm">
+              <li>✔️ 5 Projects</li>
+              <li>✔️ 5GB Storage</li>
+              <li>✔️ Priority Support</li>
+              <li>✔️ Unlimited pages</li>
+              <li>✔️ 10,000 visitors/month</li>
+              <li>✔️ Analytics</li>
+            </ul>
+          </div>
+          <button class="mt-6 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md">Try Pro</button>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="flex flex-col justify-between bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-6 text-gray-800 dark:text-white border-2 border-blue-600">
+          <div>
+            <h3 class="text-xl font-semibold">Business</h3>
+            <p class="text-4xl font-bold mt-2">$59 <span class="text-base font-medium">/mo</span></p>
+            <p class="text-gray-500 mt-2 dark:text-gray-400">For startups and growing companies.</p>
+            <ul class="mt-6 space-y-2 text-sm">
+              <li>✔️ 20 Projects</li>
+              <li>✔️ 50GB Storage</li>
+              <li>✔️ Live Chat Support</li>
+              <li>✔️ Unlimited pages</li>
+              <li>✔️ 100,000 visitors/month</li>
+              <li>✔️ Advanced Analytics</li>
+            </ul>
+          </div>
+          <button class="mt-6 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md">Start
+            Business</button>
+        </div>
+
+        <!-- Card 4 -->
+        <div
+          class="flex flex-col justify-between bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-6 text-gray-800 dark:text-white">
+          <div>
+            <h3 class="text-xl font-semibold">Enterprise</h3>
+            <p class="text-4xl font-bold mt-2">Custom</p>
+            <p class="text-gray-500 mt-2 dark:text-gray-400">For large organizations with complex needs.</p>
+            <ul class="mt-6 space-y-2 text-sm">
+              <li>✔️ Unlimited Projects</li>
+              <li>✔️ Unlimited Storage</li>
+              <li>✔️ Dedicated Support</li>
+              <li>✔️ Custom Pages</li>
+              <li>✔️ Millions of visitors/month</li>
+              <li>✔️ Custom Analytics</li>
+            </ul>
+          </div>
+          <button class="mt-6 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md">Contact
+            Sales</button>
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+<section class="flex flex-col box-container py-20 mx-auto px-3" id="blog" data-aos="fade-up" data-aos-delay="200">
+  <div class="flex flex-col mx-auto">
+    <h1 class="text-2xl sm:text-4xl text-center font-semibold">Latest Blogs</h1>
+    <p class="text-center mt-3">Lorem ipsum dolor sit amet, consectetur.</p>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
+    <div class="flex flex-col gap-4 bg-white rounded-sm dark:bg-[#191639]">
+      <img src="assets/blog-1.jpg" alt="blog-1" class="w-xl h-[300px] rounded-sm object-cover">
+      <div class="p-2 flex flex-col gap-4">
+          <h1 class="text-xl">5things That making your SE0 more powerfull</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum necessitatibus excepturi error!</p>
+      <button class="w-full py-4 bg-blue-500 rounded-sm text-white">LearnMore</button>
+      </div>
+      
+    </div>
+    <div class="flex flex-col gap-4 bg-white rounded-sm dark:bg-[#191639]">
+      <img src="assets/blog-2.jpg" alt="blog-1" class="w-xl h-[300px] rounded-sm object-cover">
+      <div class="p-2 flex flex-col gap-4">
+          <h1 class="text-xl">5things That making your SE0 more powerfull</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum necessitatibus excepturi error!</p>
+      <button class="w-full py-4 bg-blue-500 rounded-sm text-white">LearnMore</button>
+      </div>
+      
+    </div>
+    <div class="flex flex-col gap-4 bg-white rounded-sm dark:bg-[#191639]">
+      <img src="assets/blog-3.jpg" alt="blog-1" class="w-xl h-[300px] rounded-sm object-cover">
+      <div class="p-2 flex flex-col gap-4">
+          <h1 class="text-xl">5things That making your SE0 more powerfull</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum necessitatibus excepturi error!</p>
+      <button class="w-full py-4 bg-blue-500 rounded-sm text-white">LearnMore</button>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+
+
+
+      <!-- frequent asked questions -->
+
+      <section class="box-container">
+
+      
+            <div class="questionDiv" id="supporting">
+                <h1 class="text-2xl lg:text-4xl text-blue dark:text-white mb-4">Frequent Asked Questions</h1>
+                <h3  class="text-2xl lg:text-8xl text-blue dark:text-white">We always ready to help by providijng the best services for you.
+                    We beleive a good blace to live can make your life better</h3>
+
+                    <!-- this needs a javascript -->
+            </div>
+
+      
+
+      </section>
+     
+
+      
+<!-- Scroll to Top Button -->
+<span id="scrollToTopBtn" title="Go to top" class="fixed bottom-[40px] left-[40px] z-100 text-3xl hidden cursor-pointer  ">⬆️</span>
+  
+
+    <!-- cta action -->
+
+    <section class="box-container p-5 relative overflow-hidden lg:mt-[20rem] " data-aos="fade-up" data-aos-delay="100" id="CTA">
+
+
+      <div
+        class="absolute top-[10%] left-[40%] w-[500px] h-[400px] bg-blue-500 opacity-30 blur-[130px] rounded-full animate-pulse overflow-hidden ">
+      </div>
+
+      <div
+        class="flex flex-col items-center justify-center gap-10 mb-20 mt-2 bg-[#000d29] dark:bg-[#111827] rounded-lg shadow-lg p-4 md:rounded-2xl md:py-15   ">
+        <h1 class="text-2xl lg:text-4xl text-gradient font-semibold text-center leading-15">Get started with Simple
+          today</h1>
+        <p class="text-center text-xl md:text-2xl text-[#989fa9] mb-5">Use powerful yet familiar tools to create your
+          ultimate website design. <br>Import your files everywhere, including Figma.</p>
+        <a href="#"
+          class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-sm transition duration-300">Get
+          Started</a>
+      </div>
+
+    </section>
+
+    <!-- footer -->
+
+    <footer class="box-container flex flex-col  mx-auto relative p-5" data-aos="fade-up" data-aos-delay="300">
+      <div class="grid grid-cols-1 gap-5 flex-wrap mt-30 sm:grid sm:gap-20 sm:grid-cols-2 lg:grid-cols-6 lg:gap-15">
+        <div class="flex flex-col  gap-6 mb-20 lg:col-span-2">
+
+          <h1 class="text-2xl md:text-3xl text-gradient font-semibold">IntelliFlow Ai</h1>
+          <h1 class="text-xl lg:text-xl font-semibold  ">The website builder you're looking for</h1>
+          <p>
+            Simple is a modern website builder powered by AI that changes how companies create user interfaces
+            together.
+          </p>
+
+          <div class="flex items-center gap-4 ">
+            <button class="bg-blue-800 text-white  px-5 py-4 w-1/2 md:w-1/2   rounded-sm  hover:animate-pulse"
+              data-aos="fade-up" data-aos-delay="100">Get Started</button>
+            <button class="bg-white text-black  px-5 py-4 w-1/2  md:w-1/2  rounded-sm hover:animate-pulse shadow-xl"
+              data-aos="fade-right" data-aos-delay="100">LearnMore</button>
+          </div>
+
+
+        </div>
+
+        <div class="flex flex-col gap-4 ">
+          <span class="text-2xl md:text-3xl text-gradient font-semibold">Products</span>
+          <ul class="flex flex-col gap-4 ">
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Features</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Integrations</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Pricing & Plans</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Changelog</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Our method</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">API</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Documentation</a></li>
+          </ul>
+        </div>
+
+
+        <div class="flex flex-col gap-4 ">
+          <span class="text-2xl md:text-3xl text-gradient font-semibold">Company</span>
+          <ul class="flex flex-col gap-4 ">
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">About us</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Careers</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Blog</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Press</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Contact us</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Financial statements</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Diversity & Inclusion</a></li>
+          </ul>
+        </div>
+
+
+        <div class="flex flex-col gap-4  ">
+
+          <span class="text-2xl md:text-3xl text-gradient font-semibold">Resources</span>
+          <ul class="flex flex-col gap-4 ">
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Help Center</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Privacy Policy</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Terms of Service</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Security</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Status</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Accessibility</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Cookie Preferences</a></li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col gap-4 ">
+          <span class="text-2xl md:text-3xl text-gradient font-semibold">Follow us</span>
+          <ul class="flex flex-col gap-4 ">
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Twitter</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">LinkedIn</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Facebook</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Instagram</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">YouTube</a></li>
+            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">GitHub</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+
+      <h1
+        class="text-gradient text-center text-[4rem] sm:text-center sm:text-[6rem] md:text-[8rem] lg:text-[15rem] lg:text-left font-bold backdrop-blur-2xl"
+        data-aos="fade-down" data-aos-delay="200">ABDIRIZAK</h1>
+
+
+
+
+
+      <div class="flex items-center justify-between mt-20 flex-wrap gap-4">
+        <p class="text-gray-600 dark:text-gray-400">© 2025 IntelliFlow Ai. All rights reserved.</p>
+        <div class="flex items-center gap-4 flex-wrap">
+          <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Privacy Policy</a>
+          <span class="text-gray-600 dark:text-gray-400">|</span>
+          <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Terms of Service</a>
+          <span class="text-gray-600 dark:text-gray-400">|</span>
+          <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Cookie Preferences</a>
+        </div>
+      </div>
+    </footer>
+    <!-- AOS JS -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <!-- JS -->
+
+    <script src="script.js"></script>
+    <script src="faq.js"></script>
+  </div>
+</body>
+
+</html>
