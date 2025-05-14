@@ -569,6 +569,9 @@
   .resize {
     resize: both;
   }
+  .auto-rows-\[1fr\] {
+    grid-auto-rows: 1fr;
+  }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
@@ -676,6 +679,9 @@
   }
   .overflow-x-hidden {
     overflow-x: hidden;
+  }
+  .rounded {
+    border-radius: 0.25rem;
   }
   .rounded-2xl {
     border-radius: var(--radius-2xl);
@@ -1207,6 +1213,16 @@
   .md\:left-5 {
     @media (width >= 48rem) {
       left: calc(var(--spacing) * 5);
+    }
+  }
+  .md\:col-span-2 {
+    @media (width >= 48rem) {
+      grid-column: span 2 / span 2;
+    }
+  }
+  .md\:row-span-2 {
+    @media (width >= 48rem) {
+      grid-row: span 2 / span 2;
     }
   }
   .md\:mt-40 {
