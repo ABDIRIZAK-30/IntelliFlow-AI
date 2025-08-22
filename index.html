@@ -1196,39 +1196,68 @@ padding-block: 10rem;
 
     <!-- Contact Us Section -->
     <section class="box-container py-16 px-4 sm:px-6 lg:px-8" id="contact" data-aos="fade-up">
-      <div class="max-w-3xl mx-auto text-center">
+      <div class="max-w-5xl mx-auto text-center mb-12">
         <h1 class="text-3xl md:text-5xl text-gradient font-semibold">Contact Us</h1>
         <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
           We'd love to hear from you. Send us a message and we'll get back to you as soon as possible.
         </p>
       </div>
-      <div class="mt-12 max-w-2xl mx-auto">
-        <form action="#" method="POST" class="grid grid-cols-1 gap-y-6">
-          <div>
-            <label for="full_name" class="sr-only">Full name</label>
-            <input type="text" name="full_name" id="full_name" autocomplete="name"
-              class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-white"
-              placeholder="Full name">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Contact Information -->
+        <div class="text-left">
+          <div class="space-y-4">
+            <div class="flex items-start space-x-4">
+              <span class="material-symbols-outlined text-blue-500 mt-1">location_on</span>
+              <div>
+                <h3 class="text-lg font-semibold">Address</h3>
+                <p class="text-gray-600 dark:text-gray-400">123 Innovation Drive, Tech City, 12345</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <span class="material-symbols-outlined text-blue-500 mt-1">email</span>
+              <div>
+                <h3 class="text-lg font-semibold">Email</h3>
+                <p class="text-gray-600 dark:text-gray-400">contact@intelliflow.ai</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <span class="material-symbols-outlined text-blue-500 mt-1">call</span>
+              <div>
+                <h3 class="text-lg font-semibold">Phone</h3>
+                <p class="text-gray-600 dark:text-gray-400">(123) 456-7890</p>
+              </div>
+            </div>
           </div>
-          <div>
-            <label for="email" class="sr-only">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email"
-              class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-white"
-              placeholder="Email">
-          </div>
-          <div>
-            <label for="message" class="sr-only">Message</label>
-            <textarea id="message" name="message" rows="4"
-              class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-white"
-              placeholder="Message"></textarea>
-          </div>
-          <div>
-            <button type="submit"
-              class="w-full flex justify-center py-3 px-6 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-              Submit
-            </button>
-          </div>
-        </form>
+        </div>
+        <!-- Contact Form -->
+        <div>
+          <form action="#" method="POST" class="grid grid-cols-1 gap-y-6">
+            <div>
+              <label for="full_name" class="sr-only">Full name</label>
+              <input type="text" name="full_name" id="full_name" autocomplete="name"
+                class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-white"
+                placeholder="Full name">
+            </div>
+            <div>
+              <label for="email" class="sr-only">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email"
+                class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-white"
+                placeholder="Email">
+            </div>
+            <div>
+              <label for="message" class="sr-only">Message</label>
+              <textarea id="message" name="message" rows="4"
+                class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-white"
+                placeholder="Message"></textarea>
+            </div>
+            <div>
+              <button type="submit"
+                class="w-full flex justify-center py-3 px-6 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
 
